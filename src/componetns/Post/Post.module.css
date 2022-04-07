@@ -1,0 +1,8 @@
+.wrap_post{
+    border: 1px solid rebeccapurple;
+    /*background-color: red;*/
+    width: 32%;
+    height: 100px;
+    height: 100px;
+    overflow: hidden;
+}

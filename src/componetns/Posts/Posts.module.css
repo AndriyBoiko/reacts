@@ -1,0 +1,6 @@
+.wrap_posts{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    grid-gap: 15px;
+}
