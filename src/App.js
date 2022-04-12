@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import cssApp from './App.module.css'
+
+import { useState} from "react";
+
+
+import {Comments, Posts, UserInfo, Users} from "./components";
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const[userId, setUserId]= useState(null);
+    const [userPostId, setUserPostId] = useState(null)
+    const [commenstIdPosts, setCommenstIdPosts] = useState(null)
+
+
+
+
+    return (<div>
+        <div className={cssApp.wrap__users}>
+           <div className={cssApp.users__block}> <Users  setUserId={setUserId} setUserPostId={setUserPostId} setCommenstIdPosts={setCommenstIdPosts} /></div>
+        <div className={cssApp.wrap__userinfo}>{userId && <UserInfo userId={userId} setUserPostId={setUserPostId}  setCommenstIdPosts={setCommenstIdPosts} />}</div>
+        </div>
+
+
+       <div className={cssApp['wrap-posts']}> {userPostId && <Posts userPostId={userPostId} setCommenstIdPosts={setCommenstIdPosts}  />}</div>
+            { commenstIdPosts && <Comments commenstIdPosts={commenstIdPosts}/>}
+        </div>
+
+    );
 }
 
 export default App;

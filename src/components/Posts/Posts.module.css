@@ -1,0 +1,16 @@
+.wrapper-posts{
+    /*margin: 0 auto;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.wrap-slider{
+    display: flex;
+    width: 800px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    height: 400px;
+    overflow: hidden;
+}

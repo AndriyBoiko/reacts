@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.wrap__users{
+
+    display: flex;
+    justify-content: center;
+    /*align-items: end;*/
+    flex-wrap: wrap;
+
+}
+.users__block{
+    width: 400px;
+    background: #66ceb2;
+    padding: 20px 0;
+}
+.wrap__userinfo{
+    width: 400px;
+}
