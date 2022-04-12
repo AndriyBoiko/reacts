@@ -1,0 +1,22 @@
+.block__user{
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 30px;
+    margin-right: 20px;
+    margin-left: 5%;
+
+
+}
+
+.userblock{
+    margin-top: 15px;
+}
+.users__btn{
+    margin-right: 10%;
+}
+.btn__users{
+    margin-top: 15px;
+    padding: 5px;
+    border: none;
+    background-color: #c1bd5a;
+}

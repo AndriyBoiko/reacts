@@ -1,0 +1,27 @@
+.card-post {
+    border: 1px solid chocolate;
+    display: flex;
+    width: 400px;
+    height: 200px;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #7a6ebb;
+}
+
+.title-post {
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #c1bd5a;
+    text-align: center;
+}
+
+.body-post {
+    width: 350px;
+    margin: 0 auto;
+    color: #b7eca0;
+}
+
+.id-post {
+    text-align: right;
+    margin-top: 5px;
+}

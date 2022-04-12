@@ -1,0 +1,32 @@
+
+span {
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 15px;
+    color: black;
+    font-size: 14px;
+    margin-left: 25px;
+}
+
+.card {
+    position: relative;
+    background-color: #9ce5b1;
+    padding: 20px 0;
+}
+
+.card > div {
+
+    margin-top: 5px;
+    color: #d28c32;
+    font-size: 18px;
+}
+
+.card > button {
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+}
+
+.websuit-user {
+    margin-bottom: 20px;
+}
