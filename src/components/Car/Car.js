@@ -1,7 +1,7 @@
 import {carServices} from "../../services";
 
 
-const Car = ({car, setIdByDelete, setCarForUpdate, }) => {
+const Car = ({car, setIdByDelete, setCarForUpdate,}) => {
     const {model, price, year, id} = car;
 
     const deleteCar = async () => {
@@ -20,7 +20,8 @@ const Car = ({car, setIdByDelete, setCarForUpdate, }) => {
             <button onClick={() => {
 
                 setCarForUpdate(car)
-            } }>update</button>
+            }}>update
+            </button>
 
             <br/>
         </div>

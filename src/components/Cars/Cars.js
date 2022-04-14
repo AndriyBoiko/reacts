@@ -2,37 +2,42 @@ import React, {useEffect, useState} from 'react';
 import {carServices} from "../../services";
 import Car from "../Car/Car";
 
-const Cars = ({newCar, setCarForUpdate, carForUpdate }) => {
+const Cars = ({newCar, setCarForUpdate, carUpdate}) => {
     const [cars, setCars] = useState([])
-    const [carIdByDel, setIdByDelete] =useState([])
+    const [carIdByDel, setIdByDelete] = useState([])
 
-    useEffect(()=>{
-        carServices.getAllCar().then(({data})=>setCars(data))
+
+    useEffect(() => {
+        carServices.getAllCar().then(({data}) => setCars(data))
     }, [])
 
-    useEffect(()=>{
-        if(newCar){
+    useEffect(() => {
+        if (newCar) {
             // setCars([...cars, newCar])// матюгається
             setCars(prevState => [...prevState, newCar]) // не мтюгається
         }
     }, [newCar])
 
-    useEffect(()=>{
-        if(carIdByDel){
+    useEffect(() => {
+        if (carIdByDel) {
             setCars(cars.filter(car => car.id !== carIdByDel))
         }
-    },[carIdByDel])
+    }, [carIdByDel])
 
-    useEffect(()=>{
-        if (carForUpdate){
-             setCars(prevState => [...prevState, carForUpdate]  )
+    useEffect(() => {
+        if (carUpdate) {
+            const car = cars.find(car => car.id === carUpdate.id);
+            Object.assign(car, carUpdate)
+            setCars([...cars])
+            console.log(carUpdate)
         }
-    }, [carForUpdate])
+    }, [carUpdate])
 
 
     return (
         <div>
-            {cars.map(car=><Car key={car.id} car={car} setIdByDelete={setIdByDelete} setCarForUpdate={setCarForUpdate}/>)}
+            {cars.map(car => <Car key={car.id} car={car} setIdByDelete={setIdByDelete}
+                                  setCarForUpdate={setCarForUpdate}/>)}
         </div>
     );
 };
