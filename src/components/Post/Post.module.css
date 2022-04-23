@@ -1,0 +1,31 @@
+.card{
+    border: 1px solid red;
+    width: 350px ;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+.card-title{
+    margin: 10px 0;
+    text-align: center;
+    background-color: salmon;
+    font-weight: bold;
+}
+.card-link{
+    text-decoration: none;
+    color: #8ee06d;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+
+}
+
+.card-block-link{
+    margin: 10px 0;
+    background-color: rebeccapurple;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+}

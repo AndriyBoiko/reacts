@@ -1,0 +1,10 @@
+.card-detail{
+    border: 1px solid khaki;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    justify-content: center;
+    text-align: center;
+    background-color: khaki;
+    padding: 20px;
+}

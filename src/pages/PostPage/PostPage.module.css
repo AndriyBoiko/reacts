@@ -1,0 +1,11 @@
+.wrap-card{
+    margin-top: 20px;
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    grid-gap:15px ;
+}
+.card-info{
+    width: 30%;
+    margin-top: 20px;
+}

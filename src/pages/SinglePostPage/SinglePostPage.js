@@ -9,6 +9,8 @@ const SinglePostPage = () => {
     const {state} = useLocation()
     const [post, setPost] = useState(state)
     const {id} = useParams();
+
+
     useEffect(() => {
 
         if (!state) {
