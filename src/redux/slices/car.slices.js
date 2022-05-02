@@ -1,10 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {carService} from "../../services";
 
+
 const initialState = {
     cars: [],
     status: null,
-    formErrors:[]
+    formErrors: {}
 
 }
 
@@ -17,14 +18,27 @@ const getAll = createAsyncThunk(
     }
 );
 
-const create = createAsyncThunk(
-    'create',
-    async ({car}, {rejectWithValue}) => {
+const deleteById = createAsyncThunk(
+    'carSlices/deleteById',
+    async ({id}, {dispatch, rejectWithValue}) => {
         try {
-            const {data} = await carService.creat(car);
-            return data
-        } catch (e){
-            return  rejectWithValue({status:e.message, formErrors:e.response.data})
+            await carService.deleteById(id);
+            dispatch(deleteCarById({id}))
+
+        } catch (e) {
+            return rejectWithValue({status: e.message})
+        }
+    }
+)
+
+const createAsync = createAsyncThunk(
+    'create',
+    async ({car}, {dispatch, rejectWithValue}) => {
+        try {
+            const {data} = await carService.create(car);
+            dispatch(create({car: data}))
+        } catch (e) {
+            return rejectWithValue({status: e.message, formErrors: e.response.data})
         }
 
     }
@@ -32,40 +46,42 @@ const create = createAsyncThunk(
 const carSlices = createSlice({
     name: 'carSlices',
     initialState,
-    reducers: {},
-    extraReducers: {
-        [getAll.pending]: (state, action) => {
-            state.status = 'pending'
+    reducers: {
+        create: (state, action) => {
+            state.cars.push(action.payload.car)
         },
+        deleteCarById: (state, action) => {
+            const index = state.cars.findIndex(car => car.id === action.payload.id);
+            state.cars.splice(index, 1)
+        }
 
-        [getAll.fulfilled]: (state, action) => {
-            state.status = 'completed'
-            state.cars = action.payload
-        },
+    },
 
-        [getAll.rejected]: (state, action) => {
-            state.status = 'rejected'
-        },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getAll.fulfilled, (state, action) => {
+                state.status = 'completed'
+                state.cars = action.payload
+            })
+            .addCase(createAsync.fulfilled, (state, action) => {
+                console.log('completed')
+            })
+            .addCase(createAsync.rejected, (state, action) => {
+                const {status, formErrors} = action.payload;
+                state.status = status
+                state.formErrors = formErrors
 
-        [create.fulfilled]: (state, action) => {
-            state.cars.push(action.payload)
-        },
-
-        [create.rejected]: (state, action) => {
-            const {status, formErrors} = action.payload;
-            state.status =status
-            state.formErrors = formErrors
-
-        },
-
+            })
     }
 })
 
 
-const {reducer: carReducer, action} = carSlices;
+const {reducer: carReducer, action:{create, deleteCarById}} = carSlices;
 const carActions = {
     getAll,
-    create
+    createAsync,
+    deleteById
+
 }
 export {
     carReducer,

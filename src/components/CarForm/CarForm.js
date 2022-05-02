@@ -7,7 +7,7 @@ const CarForm = () => {
     const {reset, register, handleSubmit} = useForm();
     const dispatch = useDispatch();
     const submit = async (newCar) => {
-      await dispatch(carActions.create({car:newCar}))
+      await dispatch(carActions.createAsync({car:newCar}))
         reset()
     }
     return (
