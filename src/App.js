@@ -1,8 +1,14 @@
+import {Route, Routes, Navigation} from "react-router-dom";
+
+
+import {Characters} from "./components";
+
 function App() {
     return (
-        <div>
-            Hello App
-        </div>
+        <Routes>
+
+            <Characters/>
+        </Routes>
     );
 }
 
