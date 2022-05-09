@@ -1,11 +1,44 @@
+.wrap-posts{
+    margin: 10px auto;
+}
 .wrap-card{
     margin-top: 20px;
-    display: flex;
-    width: 50%;
-    flex-wrap: wrap;
     grid-gap:15px ;
 }
 .card-info{
-    width: 30%;
     margin-top: 20px;
+}
+.posts{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 10px;
+
+}
+.wrap-page{
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.btn-block{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    grid-gap: 10px;
+}
+.btn{
+    width: 150px;
+    border: none;
+    height: 20px;
+    background-color: #000;
+    color: wheat;
+
+}
+.btn-next{
+
+}
+.btn-prev{
+
 }

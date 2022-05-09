@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const Post = ({post}) => {
     const {id, title, body} = post
     return (
-        <div>
+        <div className={cssPost.wrappers}>
             <div className={cssPost['card']}>
                 <div className={cssPost['card-body']}>
                     <div className={cssPost['card-title']}>

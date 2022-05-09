@@ -1,3 +1,5 @@
+import css from './UserPage.module.css'
+
 import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 
@@ -15,7 +17,7 @@ const UsersPage = () => {
 
 
     return (
-        <div>
+        <div className={css.wrapper}>
             <div>{users.map(user => <User key={user.id} user={user}/>)}</div>
             <div><Outlet/></div>
         </div>

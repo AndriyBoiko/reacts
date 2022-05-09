@@ -1,0 +1,17 @@
+.btn-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #695e5e;
+    height: 22px;
+    width: 50px;
+    padding: 5px;
+
+}
+a {
+    text-decoration: none;
+    color: snow;
+}
+.wrapper{
+    display: flex;
+}

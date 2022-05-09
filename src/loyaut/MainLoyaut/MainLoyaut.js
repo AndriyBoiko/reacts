@@ -10,9 +10,8 @@ const MainLoyaut = () => {
                 <NavLink to="/posts">Posts</NavLink>
                 <NavLink to="/users">Users</NavLink>
                 <NavLink to="/about">About</NavLink>
-
             </div>
-            <Outlet/>
+            <div  ><Outlet/></div>
         </div>
 
     );

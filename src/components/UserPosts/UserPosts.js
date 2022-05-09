@@ -1,8 +1,9 @@
+import css from './UserPosts.module.css'
 const UserPosts = ({post}) => {
     return (
-        <div>
-            {post.title}
-        </div>
+        <ul >
+            <li>{post.title}</li>
+        </ul>
     );
 };
 

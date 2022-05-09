@@ -1,7 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .nav-wrap {
     display: flex;
     justify-content: space-between;
-    background: red;
+    background: #79945b;
+    height: 70px;
 
 }
 
@@ -12,5 +17,8 @@
 }
 
 .nav-wrap a[class='active'] {
-    color: blue;
+    color: #98ded7;
+}
+.wrapper{
+    background-color: red;
 }
