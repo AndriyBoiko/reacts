@@ -1,3 +1,6 @@
+import css from './Cars.module.css'
+
+
 import React, {useEffect, useState} from 'react';
 import {carServices} from "../../services";
 import Car from "../Car/Car";
@@ -35,7 +38,8 @@ const Cars = ({newCar, setCarForUpdate, carUpdate}) => {
 
 
     return (
-        <div>
+        <div className={css.card}>
+
             {cars.map(car => <Car key={car.id} car={car} setIdByDelete={setIdByDelete}
                                   setCarForUpdate={setCarForUpdate}/>)}
         </div>

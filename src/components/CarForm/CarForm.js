@@ -1,3 +1,5 @@
+import css from './CarForm.module.css'
+
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi"
@@ -39,15 +41,49 @@ const CarForm = ({setNewCar, carForUpdate, setCarUpdate, setCarForUpdate}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            <div><label>Model: <input type="text" {...register('model')}/></label></div>
-            {errors.model && <span>{errors.model.message}</span>}
-            <div><label>Price: <input type="text" {...register('price', {valueAsNumber: true})}/></label></div>
-            {errors.price && <span>{errors.price.message}</span>}
-            <div><label>Year: <input type="text"{...register('year', {valueAsNumber: true})}/></label></div>
-            {errors.year && <span>{errors.year.message}</span>}
-            <button>click</button>
-        </form>
+        <div className={css.wrap}>
+            <div className={css['wrap-img']}>
+                <div className={css.images}></div>
+                <h2>Add your car</h2>
+            </div>
+            <div>
+                <form onSubmit={handleSubmit(submit)}>
+                    <div className={css['form-input']}>
+                        <label>
+                            <span>Model</span>
+                            <input type="text" {...register('model')}/>
+                        </label>
+                         {errors.model && <span>{errors.model.message}</span>}
+                    </div>
+
+                    <div className={css['form-input']}>
+                        <label>
+                            <span>Price</span>
+                            <input type="text" {...register('price', {valueAsNumber: true})}/>
+                        </label>
+                         {errors.price && <span className={css.error}>{errors.price.message}</span>}
+                    </div>
+
+                    <div className={css['form-input']}>
+                        <label>
+                            <span>Year</span>
+                            <input type="text"{...register('year', {valueAsNumber: true})}/>
+                        </label>
+                        {errors.year && <span >{errors.year.message}</span>}
+                    </div>
+
+                    <div className={css['btn-wrap']}>
+
+                        <button className={css['btn-add']} >add car</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div>
+
+            </div>
+        </div>
     );
 };
 

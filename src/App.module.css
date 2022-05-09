@@ -1,0 +1,16 @@
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+
+.wrapper-form{
+    width: 25%;
+
+
+}
+.wrapper-cards{
+    width: 75%;
+}

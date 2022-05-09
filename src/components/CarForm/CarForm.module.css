@@ -1,0 +1,90 @@
+.wrap {
+    width: 250px;
+    border-radius: 10px;
+    background: linear-gradient(#e66465, #9198e5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 20px;
+
+
+}
+
+.wrap-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+h2 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+
+.images {
+    margin: 20px;
+    width: 64px;
+    height: 64px;
+    background-image: url('img/car-4-64.png');
+    background-repeat: no-repeat;
+
+}
+
+label > span {
+    display: block;
+    color: silver;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    margin-bottom: 5px;
+}
+
+input {
+
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 20px;
+
+}
+
+.btn-add {
+    margin: 10px auto;
+    background-color: #98ded7;
+    border: none;
+    width: 150px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 30px;
+
+}
+
+.btn-wrap {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+span {
+
+    font-size: 12px;
+    padding: 0;
+}
+
+.error {
+    display: block;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,41 @@
+.wrap-card {
+    background:  #9198E5FF;
+    height: 150px;
+    width: 150px;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+.card-info{
+
+    display: flex;
+    flex-direction: column;
+
+    /*justify-content: center;*/
+}
+.card-span{
+    color: #ffffff;
+    font-size: 14px;
+}
+.card-info>div{
+    height: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    border-bottom:1px solid #695558;
+}
+.cards>button{
+    height: 25px;
+    border: none;
+}
+
+.btn-delete{
+    background-color: #d58181;
+}
+.btn-update{
+    background-color: #98ded7;
+}

@@ -1,4 +1,4 @@
-import './App.css';
+import css from './App.module.css';
 import {CarForm, Cars} from "./components";
 import {useState} from "react";
 
@@ -11,11 +11,14 @@ function App() {
     //
 
     return (
-        <div>
-            <CarForm setNewCar={setNewCar} carForUpdate={carForUpdate} setCarUpdate={setCarUpdate}
+        <div className={css.wrapper}>
+           <div className={css['wrapper-from']}>
+                <CarForm setNewCar={setNewCar} carForUpdate={carForUpdate} setCarUpdate={setCarUpdate}
                      setCarForUpdate={setCarForUpdate}/>
-            <hr/>
-            <Cars newCar={newCar} setCarForUpdate={setCarForUpdate} carUpdate={carUpdate}/>
+           </div>
+            <div className={css['wrapper-cards']}>
+                <Cars newCar={newCar} setCarForUpdate={setCarForUpdate} carUpdate={carUpdate}/>
+            </div>
         </div>
     );
 }
