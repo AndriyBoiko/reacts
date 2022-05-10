@@ -1,3 +1,5 @@
+import css from './CarForm.module.css'
+
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {carActions} from "../../redux";
@@ -18,7 +20,7 @@ const CarForm = () => {
             setValue('price', price);
             setValue('year', year);
         }
-    }, [CarForUpdate])
+    },[CarForUpdate])
 
     const submit = async (newCar) => {
         if (CarForUpdate){
@@ -30,12 +32,29 @@ const CarForm = () => {
         reset()
     }
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            <div><label> Model: <input type="text"{...register('model')}/></label></div>
-            <div><label> Price: <input type="text"{...register('price')}/></label></div>
-            <div><label> Year: <input type="text"{...register('year')}/></label></div>
+       <div>
+            <form onSubmit={handleSubmit(submit)}>
+                <div className={css['form-title']}>
+                    <h2>Add your car</h2>
+                </div>
+            <div className={css['form-input']}>
+                <label>
+                    <input type="text"{...register('model')} placeholder={'MODEL'}/>
+                </label>
+            </div>
+            <div className={css['form-input']}>
+                <label>
+                    <input type="text"{...register('price')} placeholder={'PRICE'}/>
+                </label>
+            </div>
+            <div className={css['form-input']} >
+                <label>
+                    <input type="text"{...register('year')} placeholder={'YEAR'}/>
+                </label>
+            </div>
             <button>save</button>
         </form>
+       </div>
 
     );
 };

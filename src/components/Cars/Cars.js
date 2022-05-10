@@ -1,3 +1,5 @@
+import css from './Cars.module.css'
+
 import {useDispatch, useSelector} from "react-redux";
 import {Car} from "../Car/Car";
 import {useEffect} from "react";
@@ -13,8 +15,8 @@ const Cars = () => {
     },[])
     return (
         <div>
-            {status&&<p>{ status}</p>}
-            {cars.map(car=><Car key={car.id} car={car}/>)}
+            {/*{status&&<p>{ status}</p>}*/}
+           <div className={css.wrapper} > {cars.map(car=><Car key={car.id} car={car}/>)}</div>
         </div>
     );
 };

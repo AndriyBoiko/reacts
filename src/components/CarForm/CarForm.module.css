@@ -1,0 +1,40 @@
+form{
+    border: 1px solid #687e5c;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.form-title{
+    text-align: center;
+    background-color: rebeccapurple;
+    margin-bottom: 10px;
+}
+.info-txt{
+    display: block;
+}
+input{
+    margin: 10px 0;
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    border: none;
+    border-bottom:1px solid #7a7474;
+    border-top:1px solid #7a7474;
+}
+h2 {
+    color: snow;
+
+}
+form >button{
+    margin-top: 10px;
+    border: none;
+    height: 30px;
+    color: snow;
+    background-color: #4b3939;
+    cursor: pointer;
+}
